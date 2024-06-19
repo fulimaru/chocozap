@@ -17,8 +17,12 @@ document.getElementById('workoutForm').addEventListener('submit', function(e) {
   
   async function sendData(formData) {
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzWg4Hfxg6XGscQOoOqWJ4MD0emEQ6mSXiQgi_4dKRQJx7NZ9REDbhn7yE9ho5excsf/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbx8ZKz2UNzL7jdf8MBug9h6siiLPcOc2dfLQbX5sUU8fz3DMfvIxWMb0rPmGSlCYUeo/exec', {
         method: 'POST',
+        mode: 'no-cors', // CORSポリシーによる制限を回避
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded', // データ形式を指定
+        },
         body: formData
       });
   
@@ -36,7 +40,7 @@ document.getElementById('workoutForm').addEventListener('submit', function(e) {
 
   // sendData関数を呼び出してフォームデータを送信
   sendData(formData);
-  
+
   /*
   fetch('https://script.google.com/macros/s/AKfycbzWg4Hfxg6XGscQOoOqWJ4MD0emEQ6mSXiQgi_4dKRQJx7NZ9REDbhn7yE9ho5excsf/exec', {
     method: 'POST',
