@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>筋トレ管理アプリ</title>
+
+<!--GitHub Pagesを使う場合、下記のように表記しないとCSSが効かない-->
+<link rel="stylesheet" href="https://[githubユーザーネーム].github.io/[リポジトリ名]/style.css"/>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>筋トレ管理アプリ</h2>
+  <form id="workoutForm">
+    <label for="date">日付:</label><br>
+    <input type="date" id="date" name="date" required><br><br>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var date = new Date();
+    date.setDate(date.getDate());
+    var yyyy = date.getFullYear();
+    var mm = ("0" + (date.getMonth() + 1)).slice(-2);
+    var dd = ("0" + date.getDate()).slice(-2);
+    document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
+  }
+</script>
+    
+    
+    <label>重さ (kg):</label><br>
+    <select id="weight" name="weight" required>
+      <option value="" disabled selected>選択してください</option>
+      <option value="0">0 kg</option>
+      <option value="15">15 kg</option>
+      <option value="20">20 kg</option>
+      <option value="25">25 kg</option>
+      <option value="30">30 kg</option>
+      <option value="35">35 kg</option>
+      <option value="40">40 kg</option>
+      <option value="45">45 kg</option>
+      <option value="50">50 kg</option>
+      <option value="55">55 kg</option>
+      <option value="60">60 kg</option>
+      <option value="65">65 kg</option>
+      <option value="70">70 kg</option>
+      <option value="75">75 kg</option>
+      <option value="80">80 kg</option>
+      <option value="85">85 kg</option>
+      <option value="90">90 kg</option>
+      <option value="95">95 kg</option>
+      <option value="100">100 kg</option>
+    </select><br><br>
+    
+    <label for="reps">回数:</label><br>
+    <select id="reps" name="reps" required>
+      <option value="" disabled selected>選択してください</option>
+      <option value="0">0 回</option>
+      <option value="5">5 回</option>
+      <option value="10">10 回</option>
+      <option value="15">15 回</option>
+      <option value="20">20 回</option>
+      <option value="25">25 回</option>
+      <option value="30">30 回</option>
+      <option value="35">35 回</option>
+      <option value="40">40 回</option>
+      <option value="45">45 回</option>
+      <option value="50">50 回</option>
+    </select><br><br>
+    
+    <label>筋トレの種類:</label><br>
+    <div class="radio-container">
+      <label>
+        <input type="radio" name="type" value="ショルダープレス" required> ショルダープレス
+      </label>
+      <label>
+        <input type="radio" name="type" value="チェストプレス" required> チェストプレス
+      </label>
+      <label>
+        <input type="radio" name="type" value="ラットプルダウン" required> ラットプルダウン
+      </label>
+      <label>
+        <input type="radio" name="type" value="レッグプレス" required> レッグプレス
+      </label>
+      <label>
+        <input type="radio" name="type" value="アブベンチ" required> アブベンチ
+      </label>
+      <label>
+        <input type="radio" name="type" value="トレッドミル" required> トレッドミル
+      </label>
+    </div><br><br>
+    
+    <button type="submit">送信</button>
+  </form>
+  
+  <div id="response"></div>
+
+<!--グラフページのURLを指定します-->
+  <a href="https://[githubユーザーネーム].github.io/[リポジトリ名]/graph.html"　target="_blank"/>グラフはこちら
+</a>
+
+</div>
+<!--script.jsを指定-->
+<script src="https://[githubユーザーネーム].github.io/[リポジトリ名]/script.js"></script>
+</body>
+</html>
