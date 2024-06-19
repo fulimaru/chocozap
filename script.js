@@ -16,7 +16,7 @@ document.getElementById('workoutForm').addEventListener('submit', function(e) {
   formData.append('type', type);
   
 <!--Google Apps ScriptのウェブアプリURLを指定します-->
-  fetch('https://script.google.com/macros/s/AKfycbwRFMNHMw038NduT-PRIrSpbWrYDhYnOK_UYBa3KEaE_bGP7MuWkysKJQZR0YC9pRRW/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbzWg4Hfxg6XGscQOoOqWJ4MD0emEQ6mSXiQgi_4dKRQJx7NZ9REDbhn7yE9ho5excsf/exec', {
     method: 'POST',
     body: formData
   })
