@@ -15,7 +15,29 @@ document.getElementById('workoutForm').addEventListener('submit', function(e) {
   formData.append('reps', reps);
   formData.append('type', type);
   
-<!--Google Apps ScriptのウェブアプリURLを指定します-->
+  async function sendData(formData) {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzWg4Hfxg6XGscQOoOqWJ4MD0emEQ6mSXiQgi_4dKRQJx7NZ9REDbhn7yE9ho5excsf/exec', {
+        method: 'POST',
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.result === "success") {
+        document.getElementById('response').innerText = "データが正常に送信されました。";
+      } else {
+        document.getElementById('response').innerText = "エラーが発生しました: " + data.message;
+      }
+    } catch (error) {
+      document.getElementById('response').innerText = 'エラーが発生しました: ' + error.message;
+    }
+  }
+
+  // sendData関数を呼び出してフォームデータを送信
+  sendData(formData);
+  
+  /*
   fetch('https://script.google.com/macros/s/AKfycbzWg4Hfxg6XGscQOoOqWJ4MD0emEQ6mSXiQgi_4dKRQJx7NZ9REDbhn7yE9ho5excsf/exec', {
     method: 'POST',
     body: formData
@@ -31,4 +53,5 @@ document.getElementById('workoutForm').addEventListener('submit', function(e) {
   .catch(error => {
     document.getElementById('response').innerText = 'エラーが発生しました: ' + error.message;
   });
+  */
 });
